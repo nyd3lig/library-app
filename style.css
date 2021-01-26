@@ -1,0 +1,132 @@
+body{
+    font-family: 'Crimson Text', serif;
+    background-color: #F6F0ED;
+    margin: 0;
+}
+button{
+    display:block;
+    margin: 0 auto;
+}
+nav{
+    width: 100%;
+    background-color: #301F18;
+    padding: 25px 0;
+}
+.add-book{
+    font-family: 'Crimson Text', serif;
+    font-size: 20px;
+    color: #F6F0ED;
+    background-color: #301F18;
+    border: 1px solid #F6F0ED;
+    border-radius: 5px;
+    width: 150px;
+    height: 43px;
+    padding-bottom: 3px;
+    outline: none;
+}
+.hover-buttons:hover{
+    background-color: #564138;
+}
+.form-close {
+    float: right;
+    position: relative;
+    bottom: 145px;
+    right: 20px;
+    
+}
+.form-close:hover{
+    cursor: pointer;
+}
+.form-wrapper{
+    background-color:rgba(35, 19, 12, 0.5);;
+    height: 100%;
+    width: 100%;
+    padding-top: 5%;
+    display: none;
+}
+ .form-container{
+    background-color: #23130C;;
+    color: #F6F0ED;
+    width: 60%;
+    max-width: 760px;
+    height: 50%;
+    max-height: 560px;
+    font-size: 15px;
+    text-align: center;
+    margin: auto;
+    display:block;
+    border-radius: 10px;
+    padding-top: 142px;
+}
+
+.form-container p {
+    margin: 20px 0 0 0;
+}
+
+.form-container input {
+    display: block;
+    border-radius: 5px;
+    margin: auto;
+    border: none;
+    outline: none;
+}
+.form-container input[type=text]{
+    width: 290px;
+    height: 28px;
+}
+.form-container input[type=text]:focus{
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+
+  border: 1px solid rgba(139, 123, 116, 1);
+}
+
+.form-container input[type=checkbox]{
+    width: 25px;
+    height: 25px;
+}
+
+input[type=submit]{
+    width: 100px;
+    height: 35px;
+    border: none;
+    background-color: #564138;
+    color: #F6F0ED;
+    font-family: "Crimson Text";
+    margin-top: 20px;
+}
+.form-container input[type=submit]:hover{
+    width: 100px;
+    height: 35px;
+    border: none;
+    background-color: #8B7B74;
+    color: #F6F0ED;
+    font-family: "Crimson Text";
+    margin-top: 20px;
+} 
+
+
+.display{
+    display: flex;
+    margin-left: 116px;
+}
+.card {
+    background-color: #301F18;
+    width: 169px;
+    height: 237px;
+    color: #F6F0ED;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+    
+}
+.card p{
+    margin: 0px;
+}
+.card .title{
+    font-size: 25px;
+    padding-top: 57px;
+}
+.card .read{
+    margin-top: 50px;
+}
