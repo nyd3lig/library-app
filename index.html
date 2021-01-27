@@ -11,37 +11,37 @@
     <nav>
         <button class="add-book hover-buttons">Add Book</button>
     </nav>
+ 
     <div class="form-wrapper">
         <div class="form-container">
             <form class="form">
                 <span class="form-close">X</span>
                 <p>TITLE</p>
-                <input required type="text">
+                <input required type="text" id="title">
                 <p>AUTHOR</p>
-                <input required type="text">
+                <input required type="text" id="author">
                 <p>READ</p>
                 <span class="checkbox">
-                <input class="checkbox" type="checkbox" name="" id="">
+                <input class="checkbox" id="checkbox" type="checkbox" name="" id="">
                 </span>
                 <input  type="submit" value="SUBMIT" class="hover-buttons submit-button">
             </form>
         </div>
     </div>
-<!-- <div class="left-menu">
-    <form>
-        <span>TITLE</span>
-        <input required type="text">
-        <span>AUTHOR</span>
-        <input required type="text">
-        <span>READ</span>
-        <input type="checkbox" name="" id="">
-        <input type="submit" value="SUBMIT">
-    </form>
-</div> -->
- <div class="display">
+
+<div class="display">
+   <!--card dummy for styling -->
+    <div class="card">
+        <span class="card-close">X</span>
+        <p class="title">${book.title}</p>
+        <p class="autor">${book.author}</p>
+        <p class="read">${book.readStatus}</p>
+        <label class="checkbox" for="checkbox"></label>
+        <input type="checkbox" name="checkbox" id="checkbox" class="checkbox">
+     </div> 
     
- </div>
- 
+</div>
+
  <script src="script.js"></script>
 </body>
 </html>

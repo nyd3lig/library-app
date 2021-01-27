@@ -1,20 +1,13 @@
 const display = document.querySelector(".display")
 const addBookBtn = document.querySelector(".add-book")
 const formWrapper = document.querySelector(".form-wrapper")
+const form = document.querySelector(".form")
 const closeForm = document.querySelector(".form-close")
 const submitBtn = document.querySelector(".submit-button")
+const checkbox = document.querySelector("#checkbox")
 
-let myLibrary = [
-    {title: "Long ass book title on the book",
-    author: "author",
-    readStatus: "read"
-    },
-    {
-        title: "title2",
-        author: "Another author",
-        readStatus: ""
-    }
-];
+
+let myLibrary = [];
 //Opens submit form
 addBookBtn.addEventListener("click",() => {
     console.log("clicked")
@@ -29,9 +22,23 @@ formWrapper.addEventListener("click", (e) => {
     }
 })
 
+
 //Submits submit form
-submitBtn.addEventListener("clic", (e) => {
-    console.log(e.value)
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let title = form.title.value;
+    let author = form.author.value;
+    let readStatus = "NOT READ";
+    if(checkbox.checked){
+       readStatus = "READ"
+    } 
+    addBook(title, author, readStatus)
+    console.log(form)
+    console.log(author)
+    console.log(readStatus)
+    console.log(myLibrary)
+
+
 })
 
 function Book(title, author, readStatus){
@@ -45,19 +52,24 @@ function addBook(title, author, readStatus){
     readStatus.toUpperCase()
     let book = new Book(title, author, readStatus)
     myLibrary.push(book)
-    console.log(myLibrary)
+    displayBook()
+    myLibrary = [];
 }
 
 function displayBook(){
     myLibrary.forEach(book => {
         display.innerHTML += `
-        <div class="display">
         <div class="card">
-           <p class="title">${book.title}</p>
-           <p class="autor">${book.author}</p>
-           <p class="read">${book.readStatus}</p>
+            <span class="card-close">X</span>
+            <p class="title">${book.title}</p>
+            <p class="autor">${book.author}</p>
+            <p class="read">${book.readStatus}</p>
         </div>
-    </div>`
+    `
+    //Removes card
+    document.querySelector(".card-close").addEventListener("click", (e) => {
+    document.querySelector(".card").remove()
+})
     })
 }
 
