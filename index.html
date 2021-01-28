@@ -17,28 +17,34 @@
             <form class="form">
                 <span class="form-close">X</span>
                 <p>TITLE</p>
-                <input required type="text" id="title">
+                <input class="boxshadowinput" required type="text" id="title">
                 <p>AUTHOR</p>
-                <input required type="text" id="author">
+                <input class="boxshadowinput" required type="text" id="author">
                 <p>READ</p>
-                <span class="checkbox">
+                <!-- <span class="checkbox">
                 <input class="checkbox" id="checkbox" type="checkbox" name="" id="">
-                </span>
+                </span> -->
+                <div class="toggle-container">
+                    <input type="checkbox" />
+                    <div class="slider round"></div>
+               </div>
                 <input  type="submit" value="SUBMIT" class="hover-buttons submit-button">
             </form>
         </div>
     </div>
 
 <div class="display">
-   <!--card dummy for styling -->
-    <div class="card">
+   <!-- card dummy for styling -->
+   <!-- <div class="card">
         <span class="card-close">X</span>
         <p class="title">${book.title}</p>
         <p class="autor">${book.author}</p>
         <p class="read">${book.readStatus}</p>
-        <label class="checkbox" for="checkbox"></label>
-        <input type="checkbox" name="checkbox" id="checkbox" class="checkbox">
-     </div> 
+        <div class="toggle-container">
+            <input value"something" type="checkbox" id="checkbox" />
+            <div class="slider round boxshadowinput"></div> 
+       </div>
+     </div>  -->
     
 </div>
 

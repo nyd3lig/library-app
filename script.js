@@ -7,11 +7,13 @@ const submitBtn = document.querySelector(".submit-button")
 const checkbox = document.querySelector("#checkbox")
 
 
+
 let myLibrary = [];
 //Opens submit form
 addBookBtn.addEventListener("click",() => {
     console.log("clicked")
     formWrapper.style.display = "block";
+    document.querySelectorAll = ""
 })
 
 //Closes submit form
@@ -29,16 +31,23 @@ form.addEventListener("submit", (e) => {
     let title = form.title.value;
     let author = form.author.value;
     let readStatus = "NOT READ";
-    if(checkbox.checked){
-       readStatus = "READ"
-    } 
+    // if(checkbox.checked){
+    //    readStatus = "READ"
+    // } 
     addBook(title, author, readStatus)
     console.log(form)
     console.log(author)
     console.log(readStatus)
     console.log(myLibrary)
+    console.log("this is slider " + slider.value)
+
+    
+    
 
 
+})
+form.addEventListener("click",(e) => {
+    console.log("this is one click " + e.target.content)
 })
 
 function Book(title, author, readStatus){
@@ -63,7 +72,10 @@ function displayBook(){
             <span class="card-close">X</span>
             <p class="title">${book.title}</p>
             <p class="autor">${book.author}</p>
-            <p class="read">${book.readStatus}</p>
+            <div class="toggle-container">
+            <input type="checkbox" />
+            <div class="slider round"></div>
+       </div>
         </div>
     `
     //Removes card
