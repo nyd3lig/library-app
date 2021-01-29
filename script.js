@@ -4,16 +4,48 @@ const formWrapper = document.querySelector(".form-wrapper")
 const form = document.querySelector(".form")
 const closeForm = document.querySelector(".form-close")
 const submitBtn = document.querySelector(".submit-button")
-const checkbox = document.querySelector("#checkbox")
+const checkbox = document.querySelectorAll(".onOff")
 
+//Adds on off class to toggle button
+display.addEventListener("click", (e) => {
+    console.log(e.target.tagName )
+    //Adds on off class to toggle button
+    if(e.target.tagName === "INPUT"){
+        if(e.target.className === "off"){
+            e.target.classList.toggle("off")
+            e.target.classList.toggle("on")
+        } else{
+            e.target.classList.toggle("on")
+            e.target.classList.toggle("off")
+        }
+    }
 
+    //Removes card
+    
+        if(e.target.className === "card-close"){
+        e.target.parentNode.remove()
+}
+ 
+})
+formWrapper.addEventListener("click", (e) => {
+    console.log(e.target.tagName )
+    if(e.target.tagName === "INPUT"){
+        if(e.target.className === "off"){
+            e.target.classList.toggle("off")
+            e.target.classList.toggle("on")
+        } else{
+            e.target.classList.toggle("on")
+            e.target.classList.toggle("off")
+        }
+    }
+})
 
 let myLibrary = [];
 //Opens submit form
 addBookBtn.addEventListener("click",() => {
     console.log("clicked")
     formWrapper.style.display = "block";
-    document.querySelectorAll = ""
+    document.querySelectorAll = "";
 })
 
 //Closes submit form
@@ -46,9 +78,6 @@ form.addEventListener("submit", (e) => {
 
 
 })
-form.addEventListener("click",(e) => {
-    console.log("this is one click " + e.target.content)
-})
 
 function Book(title, author, readStatus){
     this.title = title
@@ -69,19 +98,18 @@ function displayBook(){
     myLibrary.forEach(book => {
         display.innerHTML += `
         <div class="card">
-            <span class="card-close">X</span>
-            <p class="title">${book.title}</p>
-            <p class="autor">${book.author}</p>
-            <div class="toggle-container">
-            <input type="checkbox" />
-            <div class="slider round"></div>
+        <span class="card-close">X</span>
+        <p class="title">${book.title}</p>
+        <p class="autor">${book.author}</p>
+        <p class="read">${book.readStatus}</p>
+        <div class="toggle-container">
+            <input value"checked" type="checkbox"  class="off"/>
+            <div class="slider round boxshadowinput"></div> 
        </div>
-        </div>
+     </div> 
     `
     //Removes card
-    document.querySelector(".card-close").addEventListener("click", (e) => {
-    document.querySelector(".card").remove()
-})
+    
     })
 }
 
