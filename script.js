@@ -4,11 +4,10 @@ const formWrapper = document.querySelector(".form-wrapper")
 const form = document.querySelector(".form")
 const closeForm = document.querySelector(".form-close")
 const submitBtn = document.querySelector(".submit-button")
-const checkbox = document.querySelectorAll(".onOff")
+const formToggleButton = document.querySelector(".form-toggle-button")
 
 //Adds on off class to toggle button
 display.addEventListener("click", (e) => {
-    console.log(e.target.tagName )
     //Adds on off class to toggle button
     if(e.target.tagName === "INPUT"){
         if(e.target.className === "off"){
@@ -21,11 +20,10 @@ display.addEventListener("click", (e) => {
     }
 
     //Removes card
-    
-        if(e.target.className === "card-close"){
+    if(e.target.className === "card-close"){
         e.target.parentNode.remove()
 }
- 
+
 })
 formWrapper.addEventListener("click", (e) => {
     console.log(e.target.tagName )
@@ -43,14 +41,12 @@ formWrapper.addEventListener("click", (e) => {
 let myLibrary = [];
 //Opens submit form
 addBookBtn.addEventListener("click",() => {
-    console.log("clicked")
     formWrapper.style.display = "block";
     document.querySelectorAll = "";
 })
 
 //Closes submit form
 formWrapper.addEventListener("click", (e) => {
-    console.log(e.target.className)
     if(e.target.className === "form-close" || e.target.className === "form-wrapper"){
         formWrapper.style.display = "none";
     }
@@ -62,27 +58,31 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     let title = form.title.value;
     let author = form.author.value;
-    let readStatus = "NOT READ";
-    // if(checkbox.checked){
-    //    readStatus = "READ"
-    // } 
-    addBook(title, author, readStatus)
+    let readStatus = "NOT READ"
+   console.log(formToggleButton.classList.contains("on"))
+   if(formToggleButton.classList.contains("on")){
+       console.log("Its on")
+        readStatus = "READ"
+   } 
+  addBook(title, author, readStatus)
     console.log(form)
     console.log(author)
     console.log(readStatus)
     console.log(myLibrary)
-    console.log("this is slider " + slider.value)
-
-    
-    
-
-
 })
 
 function Book(title, author, readStatus){
     this.title = title
     this.author = author
-    this.readStatus = readStatus.toUpperCase()
+    this.readStatus = readStatus
+}
+
+Book.prototype.toggleButton = function(readStatus, buttonState) {
+    if(buttonState === "on"){
+        this.readStatus = "READ";
+    } else {
+        this.readStatus = "NOT READ";
+    }
 }
 
 function addBook(title, author, readStatus){
@@ -104,12 +104,12 @@ function displayBook(){
         <p class="read">${book.readStatus}</p>
         <div class="toggle-container">
             <input value"checked" type="checkbox"  class="off"/>
-            <div class="slider round boxshadowinput"></div> 
+            <div class="slider round boxshadowinput"></div>
        </div>
-     </div> 
+     </div>
     `
     //Removes card
-    
+
     })
 }
 
