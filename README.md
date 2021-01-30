@@ -8,6 +8,6 @@
 <p>Sadly it is not responsive yet, and maybe this is something I will implement in the future, but right now I am going to continue on with the curriculum since I have spent a good amount of time on this project, and I'd like a change of pace</p>
 <hr>
 <p>You can find the lesson here: <a href="https://www.theodinproject.com/lessons/library">ToP Library Lesson</a></p>
-<p>And you can see this app live here: <a href="https://nyd3lig.github.io/library-app/">Library App</p>
+<p>And you can see this app live here: <a href="https://nyd3lig.github.io/library-app/">Library App</a></p>
 
 <p>The books illustration is from IRA Design, and they can be found here: <a href="https://iradesign.io/illustrations">IRA Design</a></p>
