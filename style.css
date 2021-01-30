@@ -205,8 +205,7 @@ input[type=submit] {
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: baseline;
-    height: 87%;
-    margin-left: 23%;
+    margin-left: 25%;
     margin-right: 25%;
 }
 
