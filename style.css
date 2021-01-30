@@ -299,7 +299,7 @@ input[type=submit] {
 }
 
 .cool-copyright-message{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     color: #D2BFB7;
 }
