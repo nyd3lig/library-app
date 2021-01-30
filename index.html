@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
@@ -7,11 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <nav>
         <button class="add-book hover-buttons">Add Book</button>
     </nav>
- 
+
     <div class="form-wrapper">
         <div class="form-container">
             <form class="form">
@@ -25,30 +27,31 @@
                 <input class="checkbox" id="checkbox" type="checkbox" name="" id="">
                 </span> -->
                 <div class="toggle-container">
-                    <input type="checkbox" class="off form-toggle-button"/>
+                    <input type="checkbox" class="off form-toggle-button" />
                     <div class="slider round"></div>
-               </div>
-                <input  type="submit" value="Submit" class="hover-buttons submit-button">
+                </div>
+                <input type="submit" value="Submit" class="hover-buttons submit-button">
             </form>
         </div>
     </div>
 
-<div class="display">
-    <!-- No books screen -->
-       <div class="no-cards">
+    <div class="display">
+        <!-- No books screen -->
+        <div id="empty-library" class="no-cards">
             <img width="256px" height="100px" src="images/booksicon.png">
             <div class="hl"></div>
             <p>Add books to the library.</p>
             <button class="add-book hover-buttons button-no-cards">Add Book</button>
-        </div> 
+        </div>
 
 
 
-   <!-- card dummy for styling -->
+        <!-- card dummy for styling -->
 
-    
-</div>
 
- <script src="script.js"></script>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
