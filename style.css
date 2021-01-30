@@ -1,13 +1,15 @@
+
 .checked {
     background-color: #B2B2B2
 }
 
 body{
-    font-family: 'Crimson Text', serif;
+    font-family: 'Rubik', sans-serif;
     background-color: #F6F0ED;
     margin: 0;
     height: 100%;
     width: 100%;
+    font-size: 16px;
 }
 button{
     display:block;
@@ -19,15 +21,14 @@ nav{
     padding: 25px 0;
 }
 .add-book{
-    font-family: 'Crimson Text', serif;
-    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
     color: #F6F0ED;
     background-color: #301F18;
     border: 1px solid #F6F0ED;
     border-radius: 5px;
     width: 150px;
     height: 43px;
-    padding-bottom: 3px;
     outline: none;
 }
 .hover-buttons:hover{
@@ -44,7 +45,7 @@ nav{
     z-index: 2;
 }
  .form-container{
-    background-color: #23130C;;
+    background-color: #301F18;
     color: #F6F0ED;
     width: 60%;
     max-width: 560px;
@@ -70,7 +71,7 @@ nav{
 }
 
 .form-container p {
-    margin: 20px 0 0 0;
+    margin: 24px 0 4px 0;
 }
 
 .form-container input {
@@ -91,12 +92,14 @@ nav{
 
 .toggle-container {
     position: relative;
-    top: 10;
+    top: 5;
+    left: 2px;
     display: inline-block;
     width: 70px;
     height: 26px;
     pointer-events: none;
     z-index: 1;
+    margin-bottom: 8px;
     
   }
   .toggle-container input {
@@ -166,7 +169,7 @@ input[type=submit]{
     border: none;
     background-color: #564138;
     color: #F6F0ED;
-    font-family: "Crimson Text";
+    font-family: 'Rubik', sans-serif;
     margin-top: 20px;
 }
 .form-container input[type=submit]:hover{
@@ -175,7 +178,7 @@ input[type=submit]{
     border: none;
     background-color: #8B7B74;
     color: #F6F0ED;
-    font-family: "Crimson Text";
+    font-family: 'Rubik', sans-serif;
     margin-top: 20px;
 } 
 
@@ -183,13 +186,45 @@ input[type=submit]{
 .display{
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: baseline;
     height: 87%;
     margin-left: 23%;
     margin-right: 25%;
 }
+
+.no-cards{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 192px;
+    color: #4C4C4C
+}
+.no-cards img {
+    position: relative;
+    left: 70px;
+    
+    
+}
+.no-cards p {
+    border-top: 2px solid #D2C8C8;
+    width: 380px;
+    padding-top: 16px; 
+    margin: 24px 0 0 0;
+    
+}
+.button-no-cards{
+    background-color: #564138;
+    margin-top: 32px;
+}
+.button-no-cards:hover{
+    background-color: #8B7B74;
+}
+
+
 .card {
+    position: relative;
     background-color: #301F18;
     width: 209px;
     height: 293px;
@@ -200,7 +235,12 @@ input[type=submit]{
     padding: 5px;
     box-shadow: 3px 1px 3px rgba(0, 0, 0, 0.15);
     margin-top: 5%;
-    margin-left: 50px;
+}
+.togglebutton-and-read-container{
+    position: absolute;
+    bottom: 60px;
+    left:74px;
+
 }
 .card-close {
     position: relative;

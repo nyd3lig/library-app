@@ -5,7 +5,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -16,11 +16,11 @@
         <div class="form-container">
             <form class="form">
                 <span class="form-close">X</span>
-                <p>TITLE</p>
+                <p>Title</p>
                 <input class="boxshadowinput" required type="text" id="title">
-                <p>AUTHOR</p>
+                <p>Author</p>
                 <input class="boxshadowinput" required type="text" id="author">
-                <p>READ</p>
+                <p>Not Read</p>
                 <!-- <span class="checkbox">
                 <input class="checkbox" id="checkbox" type="checkbox" name="" id="">
                 </span> -->
@@ -28,23 +28,24 @@
                     <input type="checkbox" class="off form-toggle-button"/>
                     <div class="slider round"></div>
                </div>
-                <input  type="submit" value="SUBMIT" class="hover-buttons submit-button">
+                <input  type="submit" value="Submit" class="hover-buttons submit-button">
             </form>
         </div>
     </div>
 
 <div class="display">
+    <!-- No books screen -->
+       <div class="no-cards">
+            <img width="256px" height="100px" src="images/booksicon.png">
+            <div class="hl"></div>
+            <p>Add books to the library.</p>
+            <button class="add-book hover-buttons button-no-cards">Add Book</button>
+        </div> 
+
+
+
    <!-- card dummy for styling -->
-   <div class="card">
-        <span class="card-close">X</span>
-        <p class="title">${book.title}</p>
-        <p class="autor">${book.author}</p>
-        <p class="read">${book.readStatus}</p>
-        <div class="toggle-container">
-            <input value"checked" type="checkbox"  class="off"/>
-            <div class="slider round boxshadowinput"></div> 
-       </div>
-     </div> 
+
     
 </div>
 

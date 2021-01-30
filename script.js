@@ -1,23 +1,19 @@
 const display = document.querySelector(".display")
-const addBookBtn = document.querySelector(".add-book")
 const formWrapper = document.querySelector(".form-wrapper")
 const form = document.querySelector(".form")
 const closeForm = document.querySelector(".form-close")
 const submitBtn = document.querySelector(".submit-button")
 const formToggleButton = document.querySelector(".form-toggle-button")
+const noCards = document.querySelector(".no-cards")
+const readP = document.querySelector(".read")
 
+
+let myLibrary = [];
 //Adds on off class to toggle button
 display.addEventListener("click", (e) => {
+  toggleButtonTextChangeDisplay(e)
     //Adds on off class to toggle button
-    if(e.target.tagName === "INPUT"){
-        if(e.target.className === "off"){
-            e.target.classList.toggle("off")
-            e.target.classList.toggle("on")
-        } else{
-            e.target.classList.toggle("on")
-            e.target.classList.toggle("off")
-        }
-    }
+   toggleOnOff(e)
 
     //Removes card
     if(e.target.className === "card-close"){
@@ -25,31 +21,33 @@ display.addEventListener("click", (e) => {
 }
 
 })
+//Adds on off class to toggle button on form
 formWrapper.addEventListener("click", (e) => {
-    console.log(e.target.tagName )
-    if(e.target.tagName === "INPUT"){
-        if(e.target.className === "off"){
-            e.target.classList.toggle("off")
-            e.target.classList.toggle("on")
-        } else{
-            e.target.classList.toggle("on")
-            e.target.classList.toggle("off")
-        }
+    toggleOnOff(e)
+})
+
+
+
+//Opens submit form
+document.querySelector("body").addEventListener("click", (e) => {
+    if(e.target.classList.contains("add-book")){
+        formWrapper.style.display = "block";
     }
 })
 
-let myLibrary = [];
-//Opens submit form
-addBookBtn.addEventListener("click",() => {
-    formWrapper.style.display = "block";
-    document.querySelectorAll = "";
-})
 
 //Closes submit form
 formWrapper.addEventListener("click", (e) => {
     if(e.target.className === "form-close" || e.target.className === "form-wrapper"){
         formWrapper.style.display = "none";
+    
+   
     }
+    if(e.target.type === "checkbox"){
+        toggleButtonTextChangeForm(e)
+    }
+    
+   
 })
 
 
@@ -58,37 +56,43 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     let title = form.title.value;
     let author = form.author.value;
-    let readStatus = "NOT READ"
-   console.log(formToggleButton.classList.contains("on"))
+    let readStatus = "Not Read"
+    let checkboxState = ""
+    let btnState = "off"
+    
+   
    if(formToggleButton.classList.contains("on")){
-       console.log("Its on")
-        readStatus = "READ"
-   } 
-  addBook(title, author, readStatus)
-    console.log(form)
-    console.log(author)
-    console.log(readStatus)
-    console.log(myLibrary)
+        readStatus = "Read"
+        checkboxState = "checked"
+        btnState = "on"
+   }
+  addBook(title, author, readStatus, checkboxState, btnState)
+   
+    console.log("this is btn state " + btnState)
+
+
+    // Checks display for cards
+    let displayChildren = Array.from(display.children)
+    if(displayChildren.length > 1){
+        noCards.remove()
+
+    }
 })
 
-function Book(title, author, readStatus){
+
+
+function Book(title, author, readStatus, checkboxState, btnState){
     this.title = title
     this.author = author
     this.readStatus = readStatus
+    this.checkboxState = checkboxState
+    this.btnState = btnState
 }
 
-Book.prototype.toggleButton = function(readStatus, buttonState) {
-    if(buttonState === "on"){
-        this.readStatus = "READ";
-    } else {
-        this.readStatus = "NOT READ";
-    }
-}
 
-function addBook(title, author, readStatus){
-    title.toUpperCase()
-    readStatus.toUpperCase()
-    let book = new Book(title, author, readStatus)
+
+function addBook(title, author, readStatus, checkboxState, btnState){
+    let book = new Book(title, author, readStatus, checkboxState,btnState)
     myLibrary.push(book)
     displayBook()
     myLibrary = [];
@@ -102,15 +106,48 @@ function displayBook(){
         <p class="title">${book.title}</p>
         <p class="autor">${book.author}</p>
         <p class="read">${book.readStatus}</p>
-        <div class="toggle-container">
-            <input value"checked" type="checkbox"  class="off"/>
-            <div class="slider round boxshadowinput"></div>
+        <div class="toggle-container" >
+            
+            <input ${book.checkboxState} value"checked" type="checkbox" class="${book.btnState}" />
+            <div class="slider round boxshadowinput"></div> 
        </div>
-     </div>
+     </div> 
     `
     //Removes card
 
     })
 }
 
+function toggleButtonTextChangeDisplay(e){
+    let children = e.target.parentNode.parentNode.children;
+     if(e.target.className === "off"){
+        children[3].innerText = "Read";
+        
+     } else if(e.target.className === "on"){
+        children[3].innerText = "Not Read"
+       
+     }
+}
+function toggleButtonTextChangeForm(e){
+    let state = e.target.parentNode.parentNode.children[5].textContent;
+    if(state === "Not Read"){
+        e.target.parentNode.parentNode.children[5].textContent = "Read";
+    } else {
+        e.target.parentNode.parentNode.children[5].textContent = "Not Read";
+    }
+  
+   
+}
+
+function toggleOnOff(event){
+    if(event.target.tagName === "INPUT"){
+        if(event.target.className === "off"){
+            event.target.classList.toggle("off")
+            event.target.classList.toggle("on")
+        } else{
+            event.target.classList.toggle("on")
+            event.target.classList.toggle("off")
+        }
+}
+}
 
