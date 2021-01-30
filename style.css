@@ -297,3 +297,9 @@ input[type=submit] {
     width: 100%;
     height: 50px;
 }
+
+.cool-copyright-message{
+    position: absolute;
+    bottom: 0;
+    color: #D2BFB7;
+}

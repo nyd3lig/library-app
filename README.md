@@ -4,3 +4,8 @@
 <p>However, I got a great deal of practice on DOM manipulation here, and targeting different aspects of things, shot myself in the foot a couple of times targeting classes as singles, not taking into account that when more items gets added they will collide.</p>
 
 <p>I also spent an uncomfortable amount of time trying to figure out the toggle button, and getting that to behave as I wanted, there were times where I was considering just dropping the entire toggle button idea, but I really wanted it in the design, and I am happy I stuck it out because I do feel like this type of button fits nicely</p>
+
+<p>Sadly it is not responsive yet, and maybe this is something I will implement in the future, but right now I am going to continue on with the curriculum since I have spent a good amount of time on this project, and I'd like a change of pace</p>
+
+<p>You can find the lesson here: <a href="https://www.theodinproject.com/lessons/library">ToP Library Lesson</a></p>
+<p>And you can see this app live here: <a href="https://nyd3lig.github.io/library-app/">Library App</p>
