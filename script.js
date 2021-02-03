@@ -72,7 +72,7 @@ form.addEventListener("submit", (e) => {
 
 
     formWrapper.style.display = "none";
-    clearInputs()
+    form.reset()
 
 })
 
@@ -157,9 +157,4 @@ function checksLibrary(e) {
         display.appendChild(storage);
     }
 
-}
-
-function clearInputs() {
-    form.title.value = "";
-    form.author.value = "";
 }
